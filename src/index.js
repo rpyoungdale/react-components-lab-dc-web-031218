@@ -28,7 +28,7 @@ export class InFrontOfYou extends React.Component {
   render() {
     return (
       <div>
-        <p>You shouldnt look too far.</p>
+        <p>You shouldn't look too far.</p>
         <p>Sometimes, the solution is right in front of you.</p>
       </div>
     )
@@ -36,10 +36,15 @@ export class InFrontOfYou extends React.Component {
 }
 
 export class ButcherShop extends React.Component {
-  const products = [<li>BUTCHER_PRODUCTS[0]</li>, <li>BUTCHER_PRODUCTS[1]</li>, <li>BUTCHER_PRODUCTS[2]</li>, <li>BUTCHER_PRODUCTS[3]</li>]
   render() {
+    const products = BUTCHER_PRODUCTS.map((p, idx) => (<li key={idx}>{p}</li>))
     return (
-      {products}
+      <div className="butcher-shop">
+        <p>Hello! We have the following products for sale today:</p>
+        <ul>
+          { products }
+        </ul>
+      </div>l
     )
   }
 }
